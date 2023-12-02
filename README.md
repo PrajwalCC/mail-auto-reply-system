@@ -18,10 +18,63 @@ The system fetches unread emails from the user's inbox, extracts necessary detai
 
 - **Google APIs (googleapis)**: The application leverages the googleapis library to interact with various Google APIs, particularly the Gmail API for handling email-related operations such as fetching emails, replying to them, and managing labels.
 
+- **@google-cloud/local-auth**: This library facilitates the authentication process, enabling the app to authenticate with Google APIs locally.
+
 - **Node-cron**: Node-cron is used to schedule and run periodic tasks. In this case, it's employed to periodically check for new emails in the inbox and respond to them automatically.
 
 - **FS (File System) Module**: The FS module in Node.js is used for file system operations, such as reading and writing files. It's used here to manage and store token information required for Gmail API authentication.
 
 - **Readline**: This module provides an interface for reading data from a Readable stream (like the user's input from the terminal). It's used in the authorization flow to prompt the user to enter the authorization code.
 
-- **@google-cloud/local-auth**: This library facilitates the authentication process, enabling the app to authenticate with Google APIs locally.
+## Prerequisites
+
+Before running this application, ensure that you have the following prerequisites installed and set up:
+
+- Node.js (version 14 or higher)
+- Gmail API credentials (credentials.json) from the Google Cloud Console
+
+## Setup
+
+1. **Clone the repository**
+
+    ```bash
+    git clone https://github.com/PrajwalCC/mail-auto-reply-system.git
+    ```
+
+2. **Install dependencies**
+
+    Navigate to the cloned repository directory:
+
+    ```bash
+    cd mail-auto-reply-system
+    ```
+
+    Install the required dependencies:
+
+    ```bash
+    npm install node-cron googleapis @google-cloud/local-auth readline
+    ```
+
+3. **Obtain Gmail API credentials**
+
+    - Go to the Google Cloud Console.
+    - Create a new project or select an existing project.
+    - Enable the Gmail API for your project.
+    - Create credentials (OAuth client ID) for a Web/Desktop application.
+    - Download the credentials JSON file and save it as credentials.json in the project directory.
+
+4. **Run the application**
+
+    Start the application by running the following command:
+
+    ```bash
+    node index.js
+    ```
+
+    The application will prompt you to authorize it by visiting a URL in your web browser. Follow the authorization flow and enter the generated authorization code in the terminal from the browser URL bar. Below is a sample URL, where YOUR_CODE is the token you need to put in the terminal.
+
+     http://localhost:5000/callback?code={YOUR_AUTH_CODE}&scope=https://www.googleapis.com/auth/gmail.modify
+    
+
+
+
