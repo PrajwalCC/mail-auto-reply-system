@@ -101,7 +101,7 @@ async function listAndReplyToEmails() {
                 console.log('- Sender:', sender); // Log the sender's email
                 console.log('- Subject:', subject); // Log the subject of each email
                 
-                const body = (`Thank you ${sender.split(' ')[0]} for your email. Currently on the Vacation, will connect back to you soon.`);
+                const body = (`Thank you ${sender.split(' ')[0]} for your email. Currently I am on the Vacation, will connect back to you soon.`);
                 await replyToEmail(email.id, subject, body);
             }
         } else {
