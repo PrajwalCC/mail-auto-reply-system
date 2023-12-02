@@ -75,6 +75,25 @@ Before running this application, ensure that you have the following prerequisite
 
      http://localhost:3000/callback?code={YOUR_AUTH_CODE}&scope=https://www.googleapis.com/auth/gmail.modify
     
+## Usage
+
+1. **Authorization:**
+
+    - Access the provided authorization URL in your browser to grant access to the Gmail API.
+    - Upon accessing the URL, follow the prompts to provide consent and obtain an authorization code.
+
+2. **Label Creation:**
+
+    If the 'AUTO_REPLIED_MAILS' label doesn't exist in your Gmail account, the application will create it automatically.
+
+3. **Automated Email Replies:**
+
+    The application will periodically check your inbox for new emails and send automated replies based on predefined message templates.
+
+4. **Getting Started:**
+
+    To begin using the application, follow the setup instructions in the README and run the necessary commands.
+
 
 
 
